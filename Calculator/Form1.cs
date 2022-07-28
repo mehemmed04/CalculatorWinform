@@ -15,12 +15,11 @@ namespace Calculator
         double resultValue = 0;
         string Operation = string.Empty;
         bool isOperationPerfomed = false;
+        bool isDarkMode = true;
         public Form1()
         {
             InitializeComponent();
-            this.BackColor = Color.FromArgb(210, 76, 75);
             blacklinePbx.BackColor = Color.FromArgb(30, 32, 42);
-
             foreach (var button in ButtonsGrpBx.Controls)
             {
                 if (button is Button btn)
@@ -29,6 +28,7 @@ namespace Calculator
                     btn.BackColor = Color.FromArgb(30, 32, 42);
                 }
             }
+
         }
 
 
@@ -52,7 +52,7 @@ namespace Calculator
                         resultLbl.Text = resultLbl.Text.Insert(0, "0");
                     }
                 }
-                 else resultLbl.Text += btn.Text;
+                else resultLbl.Text += btn.Text;
             }
         }
 
@@ -116,8 +116,48 @@ namespace Calculator
                     break;
             }
             resultValue = Double.Parse(resultLbl.Text);
-            Operation= "";
+            Operation = "";
             CurrentOperationLbl.Text = "";
+        }
+
+
+        private void darkmodePbx_Click(object sender, EventArgs e)
+        {
+            if (isDarkMode) isDarkMode = false;
+            else
+            {
+                isDarkMode = true;
+            }
+            if (isDarkMode)
+            {
+                groupBox1.BackgroundImage = Properties.Resources.BACKGROUND;
+
+                this.BackColor = Color.FromArgb(210, 76, 75);
+                blacklinePbx.BackColor = Color.FromArgb(30, 32, 42);
+
+                foreach (var button in ButtonsGrpBx.Controls)
+                {
+                    if (button is Button btn)
+                    {
+                        btn.ForeColor = Color.FromArgb(210, 76, 75);
+                        btn.BackColor = Color.FromArgb(30, 32, 42);
+                    }
+                }
+            }
+            else
+            {
+                groupBox1.BackgroundImage = Properties.Resources.white;
+                blacklinePbx.BackColor = Color.FromArgb(30, 32, 42);
+
+                foreach (var button in ButtonsGrpBx.Controls)
+                {
+                    if (button is Button btn)
+                    {
+                        btn.ForeColor = Color.FromArgb(30, 32, 42);
+                        btn.BackColor = Color.White;
+                    }
+                }
+            }
         }
     }
 }

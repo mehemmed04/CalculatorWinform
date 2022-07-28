@@ -50,14 +50,16 @@
             this.button20 = new System.Windows.Forms.Button();
             this.ButtonsGrpBx = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CurrentOperationLbl = new System.Windows.Forms.Label();
             this.resultLbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.blacklinePbx = new System.Windows.Forms.PictureBox();
-            this.CurrentOperationLbl = new System.Windows.Forms.Label();
+            this.darkmodePbx = new System.Windows.Forms.PictureBox();
             this.ButtonsGrpBx.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blacklinePbx)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.darkmodePbx)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -278,7 +280,7 @@
             this.button16.ForeColor = System.Drawing.Color.Red;
             this.button16.Location = new System.Drawing.Point(300, 78);
             this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(100, 62);
+            this.button16.Size = new System.Drawing.Size(109, 62);
             this.button16.TabIndex = 15;
             this.button16.Text = "/";
             this.button16.UseVisualStyleBackColor = false;
@@ -334,7 +336,7 @@
             this.button20.ForeColor = System.Drawing.Color.Red;
             this.button20.Location = new System.Drawing.Point(300, 19);
             this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(100, 62);
+            this.button20.Size = new System.Drawing.Size(109, 62);
             this.button20.TabIndex = 19;
             this.button20.Text = "X";
             this.button20.UseVisualStyleBackColor = false;
@@ -372,6 +374,7 @@
             // 
             this.groupBox1.BackgroundImage = global::Calculator.Properties.Resources.BACKGROUND;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.groupBox1.Controls.Add(this.darkmodePbx);
             this.groupBox1.Controls.Add(this.CurrentOperationLbl);
             this.groupBox1.Controls.Add(this.resultLbl);
             this.groupBox1.Controls.Add(this.pictureBox1);
@@ -382,6 +385,18 @@
             this.groupBox1.Size = new System.Drawing.Size(400, 251);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
+            // 
+            // CurrentOperationLbl
+            // 
+            this.CurrentOperationLbl.BackColor = System.Drawing.Color.Transparent;
+            this.CurrentOperationLbl.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.CurrentOperationLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CurrentOperationLbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.CurrentOperationLbl.Location = new System.Drawing.Point(39, 74);
+            this.CurrentOperationLbl.Name = "CurrentOperationLbl";
+            this.CurrentOperationLbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.CurrentOperationLbl.Size = new System.Drawing.Size(317, 35);
+            this.CurrentOperationLbl.TabIndex = 3;
             // 
             // resultLbl
             // 
@@ -414,17 +429,17 @@
             this.blacklinePbx.TabIndex = 0;
             this.blacklinePbx.TabStop = false;
             // 
-            // CurrentOperationLbl
+            // darkmodePbx
             // 
-            this.CurrentOperationLbl.BackColor = System.Drawing.Color.Transparent;
-            this.CurrentOperationLbl.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.CurrentOperationLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CurrentOperationLbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.CurrentOperationLbl.Location = new System.Drawing.Point(39, 74);
-            this.CurrentOperationLbl.Name = "CurrentOperationLbl";
-            this.CurrentOperationLbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.CurrentOperationLbl.Size = new System.Drawing.Size(317, 35);
-            this.CurrentOperationLbl.TabIndex = 3;
+            this.darkmodePbx.BackColor = System.Drawing.Color.Transparent;
+            this.darkmodePbx.BackgroundImage = global::Calculator.Properties.Resources.sunIcon;
+            this.darkmodePbx.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.darkmodePbx.Location = new System.Drawing.Point(17, 29);
+            this.darkmodePbx.Name = "darkmodePbx";
+            this.darkmodePbx.Size = new System.Drawing.Size(38, 33);
+            this.darkmodePbx.TabIndex = 4;
+            this.darkmodePbx.TabStop = false;
+            this.darkmodePbx.Click += new System.EventHandler(this.darkmodePbx_Click);
             // 
             // Form1
             // 
@@ -442,6 +457,7 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.blacklinePbx)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.darkmodePbx)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -474,6 +490,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label resultLbl;
         private System.Windows.Forms.Label CurrentOperationLbl;
+        private System.Windows.Forms.PictureBox darkmodePbx;
     }
 }
 
