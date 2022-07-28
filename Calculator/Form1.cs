@@ -159,5 +159,24 @@ namespace Calculator
                 }
             }
         }
+
+  
+
+        private void button_enter(object sender, EventArgs e)
+        {
+            if(sender is Button btn)
+            {
+                btn.BackColor = Color.Silver;
+            }
+        }
+
+        private void button_leave(object sender, EventArgs e)
+        {
+            if (sender is Button btn)
+            {
+                if (isDarkMode) btn.BackColor = Color.FromArgb(30, 32, 42);
+                else btn.BackColor = Color.White;
+            }
+        }
     }
 }
